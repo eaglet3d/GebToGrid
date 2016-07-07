@@ -1,6 +1,6 @@
 # Example Geb and Gradle Project
 
-This project was derrived from geb/geb-example-gradle.
+This project was derived from geb/geb-example-gradle.
 
 [![Build Status][build_status]](https://snap-ci.com/geb/geb-example-gradle/branch/master)
 
