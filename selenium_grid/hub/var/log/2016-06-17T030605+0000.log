@@ -1,0 +1,21 @@
+03:06:09.607 INFO [1] org.openqa.grid.selenium.GridLauncher - Launching Selenium Grid hub
+03:06:11.445 INFO [1] org.openqa.grid.web.Hub - Will listen on 4433
+03:06:11.501 INFO [1] org.openqa.grid.web.Hub - Will listen on 4433
+03:06:11.581 INFO [1] org.openqa.grid.selenium.GridLauncher - Nodes should register to http://172.17.0.1:4433/grid/register/
+03:06:11.581 INFO [1] org.openqa.grid.selenium.GridLauncher - Selenium Grid hub is up and running
+03:06:16.508 WARN [17] org.openqa.grid.internal.BaseRemoteProxy - Max instance not specified. Using default = 1 instance
+03:06:16.512 INFO [23] org.openqa.grid.internal.Registry - Registered a node http://172.18.0.2:5555
+03:24:11.891 WARN [16] org.openqa.grid.internal.BaseRemoteProxy - Max instance not specified. Using default = 1 instance
+03:24:11.892 INFO [26] org.openqa.grid.internal.Registry - Registered a node http://172.18.0.3:5555
+03:24:13.012 WARN [18] org.openqa.grid.internal.BaseRemoteProxy - Max instance not specified. Using default = 1 instance
+03:24:13.030 INFO [29] org.openqa.grid.internal.Registry - Registered a node http://172.18.0.4:5555
+03:24:13.343 WARN [17] org.openqa.grid.internal.BaseRemoteProxy - Max instance not specified. Using default = 1 instance
+03:24:13.344 INFO [32] org.openqa.grid.internal.Registry - Registered a node http://172.18.0.7:5555
+03:24:13.390 WARN [18] org.openqa.grid.internal.BaseRemoteProxy - Max instance not specified. Using default = 1 instance
+03:24:13.395 INFO [35] org.openqa.grid.internal.Registry - Registered a node http://172.18.0.6:5555
+03:24:13.463 WARN [16] org.openqa.grid.internal.BaseRemoteProxy - Max instance not specified. Using default = 1 instance
+03:24:13.464 INFO [38] org.openqa.grid.internal.Registry - Registered a node http://172.18.0.5:5555
+03:24:13.929 WARN [16] org.openqa.grid.internal.BaseRemoteProxy - Max instance not specified. Using default = 1 instance
+03:24:13.929 INFO [41] org.openqa.grid.internal.Registry - Registered a node http://172.18.0.8:5555
+03:24:13.997 WARN [17] org.openqa.grid.internal.BaseRemoteProxy - Max instance not specified. Using default = 1 instance
+03:24:13.998 INFO [44] org.openqa.grid.internal.Registry - Registered a node http://172.18.0.9:5555

@@ -1,0 +1,42 @@
+11:13:54.160 INFO [1] org.openqa.grid.selenium.GridLauncher - Launching a Selenium Grid node
+11:13:54.240 INFO [1] org.openqa.grid.common.RegistrationRequest - Adding browserName=firefox,version=46.0,platform=WINDOWS
+11:13:54.244 INFO [1] org.openqa.grid.common.RegistrationRequest - Adding browserName=internet explorer,version=8.0,platform=WINDOWS
+11:13:54.246 INFO [1] org.openqa.grid.common.RegistrationRequest - Adding browserName=chrome,version=50.0,platform=WINDOWS
+11:13:54.996 INFO [1] org.openqa.selenium.server.SeleniumServer - Writing debug logs to logs\2016-05-09T111353-0400.log
+11:13:54.999 INFO [1] org.openqa.selenium.server.SeleniumServer - Java: Oracle Corporation 25.73-b02
+11:13:55.002 INFO [1] org.openqa.selenium.server.SeleniumServer - OS: Windows 7 6.1 amd64
+11:13:55.010 INFO [1] org.openqa.selenium.server.SeleniumServer - v2.53.0, with Core v2.53.0. Built from revision 35ae25b
+11:13:55.063 INFO [1] org.openqa.selenium.remote.server.DefaultDriverProvider - Driver class not found: com.opera.core.systems.OperaDriver
+11:13:55.066 INFO [1] org.openqa.selenium.remote.server.DefaultDriverFactory - Driver provider com.opera.core.systems.OperaDriver is not registered
+11:13:55.076 INFO [1] org.openqa.selenium.remote.server.DefaultDriverSessions - Driver provider org.openqa.selenium.safari.SafariDriver registration is skipped:
+registration capabilities Capabilities [{browserName=safari, version=, platform=MAC}] does not match the current platform VISTA
+11:13:55.080 INFO [1] org.openqa.selenium.remote.server.DefaultDriverProvider - Driver class not found: org.openqa.selenium.htmlunit.HtmlUnitDriver
+11:13:55.082 INFO [1] org.openqa.selenium.remote.server.DefaultDriverFactory - Driver provider org.openqa.selenium.htmlunit.HtmlUnitDriver is not registered
+11:13:55.117 INFO [1] org.openqa.grid.selenium.GridLauncher - Selenium Grid node is up and ready to register to the hub
+11:13:55.151 INFO [19] org.openqa.grid.internal.utils.SelfRegisteringRemote - Starting auto registration thread. Will try to register every 5000 ms.
+11:13:55.154 INFO [19] org.openqa.grid.internal.utils.SelfRegisteringRemote - Registering the node to the hub: http://192.168.99.100:4444/grid/register
+11:13:55.168 INFO [19] org.openqa.grid.internal.utils.SelfRegisteringRemote - The node is registered to the hub and ready to use
+11:14:59.217 INFO [17] org.openqa.selenium.server.SeleniumDriverResourceHandler - Command request: getLog[, ] on session null
+11:14:59.254 INFO [17] org.openqa.selenium.server.SeleniumDriverResourceHandler - Got result: OK,null on session null
+11:15:00.110 INFO [17] org.openqa.selenium.server.SeleniumDriverResourceHandler - Command request: getLog[, ] on session null
+11:15:00.114 INFO [17] org.openqa.selenium.server.SeleniumDriverResourceHandler - Got result: OK,null on session null
+11:15:00.646 INFO [17] org.openqa.selenium.server.SeleniumDriverResourceHandler - Command request: getLog[, ] on session null
+11:15:00.661 INFO [17] org.openqa.selenium.server.SeleniumDriverResourceHandler - Got result: OK,null on session null
+11:15:00.947 INFO [17] org.openqa.selenium.server.SeleniumDriverResourceHandler - Command request: getLog[, ] on session null
+11:15:00.951 INFO [17] org.openqa.selenium.server.SeleniumDriverResourceHandler - Got result: OK,null on session null
+11:15:01.499 INFO [17] org.openqa.selenium.server.SeleniumDriverResourceHandler - Command request: getLog[, ] on session null
+11:15:01.503 INFO [17] org.openqa.selenium.server.SeleniumDriverResourceHandler - Got result: OK,null on session null
+11:15:01.835 INFO [17] org.openqa.selenium.server.SeleniumDriverResourceHandler - Command request: getLog[, ] on session null
+11:15:02.138 INFO [17] org.openqa.selenium.server.SeleniumDriverResourceHandler - Got result: OK,null on session null
+11:15:27.982 INFO [17] org.openqa.selenium.server.SeleniumDriverResourceHandler - Command request: getLog[, ] on session null
+11:15:28.018 INFO [17] org.openqa.selenium.server.SeleniumDriverResourceHandler - Got result: OK,null on session null
+11:15:28.584 INFO [17] org.openqa.selenium.server.SeleniumDriverResourceHandler - Command request: getLog[, ] on session null
+11:15:28.588 INFO [17] org.openqa.selenium.server.SeleniumDriverResourceHandler - Got result: OK,null on session null
+11:15:28.917 INFO [17] org.openqa.selenium.server.SeleniumDriverResourceHandler - Command request: getLog[, ] on session null
+11:15:28.921 INFO [17] org.openqa.selenium.server.SeleniumDriverResourceHandler - Got result: OK,null on session null
+11:15:29.273 INFO [17] org.openqa.selenium.server.SeleniumDriverResourceHandler - Command request: getLog[, ] on session null
+11:15:29.277 INFO [17] org.openqa.selenium.server.SeleniumDriverResourceHandler - Got result: OK,null on session null
+11:17:28.561 INFO [17] org.openqa.selenium.server.SeleniumDriverResourceHandler - Command request: shutDownSeleniumServer[, ] on session null
+11:17:28.581 INFO [17] org.openqa.selenium.server.SeleniumDriverResourceHandler - Shutdown command received
+11:17:28.585 INFO [24] org.openqa.selenium.server.SeleniumDriverResourceHandler - initiating shutdown
+11:17:28.585 INFO [17] org.openqa.selenium.server.SeleniumDriverResourceHandler - Got result: OK on session null

@@ -1,0 +1,27 @@
+#!/bin/bash
+#help selenium.node.register                     # Register a node on this machine with the selenium grid hub
+
+HUB_1_TCP_ADDR="192.168.99.100:4444"
+SeleniumVersion=2.53.0
+FirefoxVersion=46.0
+ChromeVersion=50.0
+IEVersion=8.0
+seleniumPath="C:\Users\Ranavarr\Downloads\Selenium"
+Platform=WINDOWS
+
+# Check and create logs directory
+[ ! -d logs ] && mkdir logs
+logPath="logs/$(date +"%Y-%m-%dT%H%M%S%z").log"
+
+echo "Started node from PID=$$"
+
+java -jar "${seleniumPath}\selenium-server-standalone-${SeleniumVersion}.jar" \
+-role node -port 5555 -hub http://${HUB_1_TCP_ADDR}/grid/register \
+-browser "browserName=firefox,version=${FirefoxVersion},platform=${Platform}" \
+-Dwebdriver.ie.driver=${seleniumPath}/IEDriverServer.exe \
+-browser "browserName=internet explorer,version=${IEVersion},platform=${Platform}" \
+-Dwebdriver.chrome.driver=${seleniumPath}/chromedriver.exe \
+-browser "browserName=chrome,version=${ChromeVersion},platform=${Platform}" \
+-browserTimeout=300 \
+-log "${logPath}" 
+

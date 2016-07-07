@@ -1,0 +1,11 @@
+20:09:40.586 INFO [1] org.openqa.grid.selenium.GridLauncher - Launching Selenium Grid hub
+20:09:41.246 INFO [1] org.openqa.grid.web.Hub - Will listen on 4444
+20:09:41.292 INFO [1] org.openqa.grid.web.Hub - Will listen on 4444
+20:09:41.334 INFO [1] org.openqa.grid.selenium.GridLauncher - Nodes should register to http://172.18.0.1:4444/grid/register/
+20:09:41.334 INFO [1] org.openqa.grid.selenium.GridLauncher - Selenium Grid hub is up and running
+20:09:41.709 WARN [17] org.openqa.grid.internal.BaseRemoteProxy - Max instance not specified. Using default = 1 instance
+20:09:41.712 INFO [23] org.openqa.grid.internal.Registry - Registered a node http://172.18.0.2:5555
+20:53:10.885 INFO [17] org.openqa.grid.web.servlet.handler.RequestHandler - Got a request to create a new session: Capabilities [{platform=LINUX, browserName=firefox, version=47.0.1}]
+20:53:10.886 INFO [9] org.openqa.grid.internal.ProxySet - Available nodes: [http://172.18.0.2:5555]
+20:53:10.886 INFO [9] org.openqa.grid.internal.BaseRemoteProxy - Trying to create a new session on node http://172.18.0.2:5555
+20:53:10.886 INFO [9] org.openqa.grid.internal.TestSlot - Trying to create a new session on test slot {platform=LINUX, seleniumProtocol=WebDriver, browserName=firefox, version=47.0.1}

@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  hub:
+    build: hub/.
+    image: selenium_grid/hub:2.53.1
+    ports:
+     - "4444:4444"
+    logging:
+      driver: "json-file"
+    network_mode: "host"
+    volumes:
+      - ./hub/var/log:/var/log
+
+  firefox:
+    build: firefox/.
+    image: selenium_grid/firefox:47.0.1
+    links:
+     - hub
+    expose:
+     - "5555"
+    logging:
+      driver: "json-file"
+    volumes:
+      - ./firefox/var/log:/var/log
+

@@ -1,0 +1,18 @@
+17:24:16.759 INFO [1] org.openqa.grid.selenium.GridLauncher - Launching a Selenium Grid node
+17:24:17.027 INFO [1] org.openqa.grid.common.RegistrationRequest - Adding browserName=firefox,version=46.0,platform=WINDOWS
+17:24:17.032 INFO [1] org.openqa.grid.common.RegistrationRequest - Adding browserName=internet explorer,version=8.0,platform=WINDOWS
+17:24:17.035 INFO [1] org.openqa.grid.common.RegistrationRequest - Adding browserName=chrome,version=50.0,platform=WINDOWS
+17:24:19.552 INFO [1] org.openqa.selenium.server.SeleniumServer - Writing debug logs to logs\2016-05-19T172413-0400.log
+17:24:19.582 INFO [1] org.openqa.selenium.server.SeleniumServer - Java: Oracle Corporation 25.73-b02
+17:24:19.586 INFO [1] org.openqa.selenium.server.SeleniumServer - OS: Windows 7 6.1 amd64
+17:24:19.600 INFO [1] org.openqa.selenium.server.SeleniumServer - v2.53.0, with Core v2.53.0. Built from revision 35ae25b
+17:24:19.925 INFO [1] org.openqa.selenium.remote.server.DefaultDriverProvider - Driver class not found: com.opera.core.systems.OperaDriver
+17:24:19.958 INFO [1] org.openqa.selenium.remote.server.DefaultDriverFactory - Driver provider com.opera.core.systems.OperaDriver is not registered
+17:24:20.134 INFO [1] org.openqa.selenium.remote.server.DefaultDriverSessions - Driver provider org.openqa.selenium.safari.SafariDriver registration is skipped:
+registration capabilities Capabilities [{browserName=safari, version=, platform=MAC}] does not match the current platform VISTA
+17:24:20.144 INFO [1] org.openqa.selenium.remote.server.DefaultDriverProvider - Driver class not found: org.openqa.selenium.htmlunit.HtmlUnitDriver
+17:24:20.147 INFO [1] org.openqa.selenium.remote.server.DefaultDriverFactory - Driver provider org.openqa.selenium.htmlunit.HtmlUnitDriver is not registered
+17:24:20.232 INFO [1] org.openqa.grid.selenium.GridLauncher - Selenium Grid node is up and ready to register to the hub
+17:24:20.331 INFO [19] org.openqa.grid.internal.utils.SelfRegisteringRemote - Starting auto registration thread. Will try to register every 5000 ms.
+17:24:20.335 INFO [19] org.openqa.grid.internal.utils.SelfRegisteringRemote - Registering the node to the hub: http://192.168.99.100:4444/grid/register
+17:24:20.384 INFO [19] org.openqa.grid.internal.utils.SelfRegisteringRemote - The node is registered to the hub and ready to use

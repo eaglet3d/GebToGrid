@@ -1,0 +1,7 @@
+19:59:43.776 INFO [1] org.openqa.grid.selenium.GridLauncher - Launching Selenium Grid hub
+19:59:44.443 INFO [1] org.openqa.grid.web.Hub - Will listen on 4444
+19:59:44.489 INFO [1] org.openqa.grid.web.Hub - Will listen on 4444
+19:59:44.530 INFO [1] org.openqa.grid.selenium.GridLauncher - Nodes should register to http://172.18.0.1:4444/grid/register/
+19:59:44.531 INFO [1] org.openqa.grid.selenium.GridLauncher - Selenium Grid hub is up and running
+19:59:44.890 WARN [17] org.openqa.grid.internal.BaseRemoteProxy - Max instance not specified. Using default = 1 instance
+19:59:44.893 INFO [23] org.openqa.grid.internal.Registry - Registered a node http://172.18.0.2:5555

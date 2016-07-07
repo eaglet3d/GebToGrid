@@ -1,0 +1,22 @@
+#!/bin/bash
+#help selenium.node.register                     # Register a node on this machine with the selenium grid hub
+
+HUB_1_TCP_ADDR=192.168.99.100:4433
+SeleniumVersion=2.53.0
+ChromeVersion=2.21
+seleniumPath="/var"
+Platform=LINUX
+logDir="/var/log"
+
+# Check and create logs directory
+[ ! -d "${logDir}" ] && mkdir -p "${logDir}"
+logPath="${logDir}/$(date +"%Y-%m-%dT%H%M%S%z").log"
+
+xvfb-run --server-args=":99.0 -screen 0 2000x2000x16 -ac" \
+
+cd /var
+java -jar "${seleniumPath}/selenium-server-standalone-${SeleniumVersion}.jar" \
+-role node -hub http://${HUB_1_TCP_ADDR}/grid/register \
+-browser "browserName=chrome,version=${ChromeVersion},platform=${Platform}" \
+-browserTimeout=300 \
+-log "${logPath}"

@@ -1,0 +1,20 @@
+#/bin/bash
+#help selenium.hub.start                         # Start the selenium grid hub
+
+SeleniumVersion=2.53.1
+hub_ip_port=4444
+
+echo "SeleniumVersion = ${SeleniumVersion}"
+logDir="/var/log"
+# Check and create logs directory
+[ ! -d "${logDir}" ] && mkdir -p "${logDir}"
+logPath="${logDir}/$(date +"%Y-%m-%dT%H%M%S%z").log"
+
+echo "Started hub from PID=$$"
+
+cd /var
+java -jar /opt/selenium-server-standalone-${SeleniumVersion}.jar \
+-role hub \
+-port ${hub_ip_port} \
+-log "${logPath}"
+
