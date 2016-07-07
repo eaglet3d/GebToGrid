@@ -1,5 +1,7 @@
 # Example Geb and Gradle Project
 
+This project was derrived from geb/geb-example-gradle.
+
 [![Build Status][build_status]](https://snap-ci.com/geb/geb-example-gradle/branch/master)
 
 ## Description
@@ -10,11 +12,9 @@ The build is setup to work with Firefox, Chrome and PhantomJS. Have a look at th
 
 ## Usage
 
-The following commands will launch the tests with the individual browsers:
+The following command will launch the test with the individual browser:
 
-    ./gradlew chromeTest
     ./gradlew firefoxTest
-    ./gradlew phantomJsTest
 
 To run with all, you can run:
 
