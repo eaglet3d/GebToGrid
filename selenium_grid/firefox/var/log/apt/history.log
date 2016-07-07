@@ -1,5 +1,0 @@
-
-Start-Date: 2016-07-04  19:52:16
-Commandline: apt-get install iproute
-Install: iproute:amd64 (1:4.3.0-1ubuntu3), libatm1:amd64 (1:2.5.1-1.5, automatic), iproute2:amd64 (4.3.0-1ubuntu3, automatic), libxtables11:amd64 (1.6.0-2ubuntu3, automatic), libmnl0:amd64 (1.0.3-5, automatic)
-End-Date: 2016-07-04  19:52:20
