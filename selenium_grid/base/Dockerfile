@@ -1,5 +1,9 @@
 FROM ubuntu
-ENV SELENIUM_VERSION 2.53.1
+
+ENV VERSION 2.53.1
+ENV VER_FOLDER 2.53
+#ENV VERSION 3.0.0-beta3
+#ENV VER_FOLDER 3.0-beta3
 
 RUN apt-get update -qqy \
     && apt-get -qqy --no-install-recommends install \
@@ -14,15 +18,14 @@ RUN apt-get update -qqy \
     && apt-get -qqy --no-install-recommends install \
     bzip2 \
     ca-certificates \
-    oracle-java7-installer \
+    oracle-java8-installer \
     sudo \
     unzip \
     vim \
     iproute \
     && rm -rf /var/lib/apt/lists/*
 
-ADD "http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-${SELENIUM_VERSION}.jar" /opt/
-#RUN cd /opt/ && wget http://selenium-release.storage.googleapis.com/${SELENIUM_VERSION%.*}/selenium-server-standalone-${SELENIUM_VERSION}.jar
+RUN cd /var && wget http://selenium-release.storage.googleapis.com/${VER_FOLDER}/selenium-server-standalone-${VERSION}.jar
 
 #========================================
 # Add normal user with passwordless sudo

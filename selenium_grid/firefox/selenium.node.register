@@ -1,11 +1,11 @@
 #!/bin/bash
 
-#HUB_1_TCP_ADDR=192.168.99.100:4433
-HUB_1_TCP_ADDR=172.18.0.1:4444
+HUB_1_TCP_ADDR=192.168.99.100:4433
 SeleniumVersion=2.53.1
-#FirefoxVersion=46.0
-FirefoxVersion=47.0.1
-seleniumPath="/opt"
+#SeleniumVersion=3.0.0-beta3
+#FirefoxVersion=47.0.1
+FirefoxVersion=45.3.0esr
+seleniumPath="/var"
 logDir="/var/log"
 
 # Check and create logs directory
@@ -19,6 +19,6 @@ xvfb-run --server-args=":99.0 -screen 0 2000x2000x16 -ac" \
 java -jar "${seleniumPath}/selenium-server-standalone-${SeleniumVersion}.jar" \
 -role node -hub http://${HUB_1_TCP_ADDR}/grid/register \
 -browser browserName=firefox,version=${FirefoxVersion},platform=LINUX \
--browserTimeout=300 \
+-browserTimeout 300 \
 -log "${logPath}" 
 

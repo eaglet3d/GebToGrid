@@ -3,18 +3,20 @@ version: '2'
 services:
   hub:
     build: hub/.
-    image: selenium_grid/hub:2.53.1
     ports:
-     - "4444:4444"
+     - "4433:4433"
+    image: selenium_grid/hub:2.53.1
     logging:
       driver: "json-file"
     network_mode: "host"
     volumes:
-      - ./hub/var/log:/var/log
+      - ./logs:/var/log
+    environment:
+      JAVA_OPTS: "-Djava.security.egd=file:/dev/./urandom"
 
   firefox:
     build: firefox/.
-    image: selenium_grid/firefox:47.0.1
+    image: selenium_grid/firefox:45.3.0esr
     links:
      - hub
     expose:
@@ -22,5 +24,7 @@ services:
     logging:
       driver: "json-file"
     volumes:
-      - ./firefox/var/log:/var/log
+      - ./logs:/var/log
+    environment:
+      JAVA_OPTS: "-Djava.security.egd=file:/dev/./urandom"
 
