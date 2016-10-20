@@ -1,3 +1,10 @@
+# Selenium Logs
 selenium_grid/logs
+
+# IDEA files
+CodeExamples/geb-example-gradle/*.iml
+CodeExamples/geb-example-gradle/.idea
+
+# Gradle files
 CodeExamples/geb-example-gradle/.gradle
 CodeExamples/geb-example-gradle/build
