@@ -1,6 +1,7 @@
 #!/bin/bash
 
-HUB_1_TCP_ADDR=192.168.99.100:4433
+#HUB_1_TCP_ADDR=192.168.99.100:4433
+HUB_1_TCP_ADDR=192.168.1.4:4433
 SeleniumVersion=2.53.1
 #SeleniumVersion=3.0.0-beta3
 #FirefoxVersion=47.0.1
