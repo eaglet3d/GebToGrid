@@ -8,7 +8,6 @@ services:
     image: selenium_grid/hub:2.53.1
     logging:
       driver: "json-file"
-    network_mode: "host"
     volumes:
       - ./logs:/var/log
     environment:
@@ -18,7 +17,7 @@ services:
     build: firefox/.
     image: selenium_grid/firefox:45.3.0esr
     links:
-     - hub
+     - hub:hub
     expose:
      - "5555"
     logging:

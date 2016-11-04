@@ -22,7 +22,10 @@ RUN apt-get update -qqy \
     sudo \
     unzip \
     vim \
+    less \
     iproute \
+    net-tools \
+    iputils-ping \
     && rm -rf /var/lib/apt/lists/*
 
 RUN cd /var && wget http://selenium-release.storage.googleapis.com/${VER_FOLDER}/selenium-server-standalone-${VERSION}.jar
