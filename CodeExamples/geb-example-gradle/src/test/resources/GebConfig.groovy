@@ -27,19 +27,23 @@ environments {
 	
     // run via “./gradlew firefoxTest”
     // See: http://code.google.com/p/selenium/wiki/FirefoxDriver
-    firefox {
+    firefoxLinux {
         //driver = { new FirefoxDriver() }
         driver = {
             DesiredCapabilities capabilities = DesiredCapabilities.firefox()
             capabilities.setVersion("45.3.0esr")
             capabilities.setPlatform(Platform.LINUX)
-            new RemoteWebDriver( new URL("http://192.168.1.4:4433/wd/hub"), capabilities )
+            new RemoteWebDriver( new URL("http://localhost:4433/wd/hub"), capabilities )
 
             //FirefoxProfile profile = new FirefoxProfile()
             //profile.setPreference("intl.accept_languages", "en-us")
             //def driverInstance = new FirefoxDriver(profile)
             //driverInstance
         }
+    }
+
+    firefox {
+        driver = { new FirefoxDriver() }
     }
 
     //phantomJs {
