@@ -1,3 +1,5 @@
+package Common
+
 import geb.Module
 
 class MenuModule extends Module {

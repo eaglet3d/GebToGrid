@@ -1,3 +1,5 @@
+package Pages
+
 import geb.Page
 
 class TheBookOfGebPage extends Page {

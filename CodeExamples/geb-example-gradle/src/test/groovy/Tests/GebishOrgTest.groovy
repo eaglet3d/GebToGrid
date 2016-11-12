@@ -1,3 +1,7 @@
+package Tests
+
+import Pages.GebishOrgHomePage
+import Pages.TheBookOfGebPage
 import geb.junit4.GebReportingTest
 import org.junit.Test
 import org.junit.runner.RunWith

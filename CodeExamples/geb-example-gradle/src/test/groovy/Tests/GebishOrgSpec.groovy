@@ -1,3 +1,7 @@
+package Tests
+
+import Pages.GebishOrgHomePage
+import Pages.TheBookOfGebPage
 import geb.spock.GebReportingSpec
 
 class GebishOrgSpec extends GebReportingSpec {
