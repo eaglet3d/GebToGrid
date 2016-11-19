@@ -33,7 +33,7 @@ environments {
             DesiredCapabilities capabilities = DesiredCapabilities.firefox()
             capabilities.setVersion("45.3.0esr")
             capabilities.setPlatform(Platform.LINUX)
-            new RemoteWebDriver( new URL("http://localhost:4433/wd/hub"), capabilities )
+            new RemoteWebDriver( new URL("http://10.0.2.15:4433/wd/hub"), capabilities )
 
             //FirefoxProfile profile = new FirefoxProfile()
             //profile.setPreference("intl.accept_languages", "en-us")
