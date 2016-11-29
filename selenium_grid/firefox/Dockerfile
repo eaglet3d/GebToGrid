@@ -1,10 +1,7 @@
 FROM selenium_grid/base:2.53.1
 #FROM selenium_grid/base:3.0.0-beta3
 
-#ENV FIREFOX_MINOR 34.0.5
-#ENV FIREFOX_MINOR 45.0.2
-#ENV FIREFOX_MINOR 47.0.1
-ENV FIREFOX_MINOR 45.3.0esr
+ENV FIREFOX_MINOR 45.5.0esr
 
 RUN apt-get update -qqy
 RUN apt-get update --fix-missing

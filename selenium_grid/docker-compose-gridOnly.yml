@@ -27,12 +27,3 @@ services:
     environment:
       JAVA_OPTS: "-Djava.security.egd=file:/dev/./urandom"
 
-  jenkins:
-    build: jenkins/.
-    image: jenkins
-    container_name: ncjenkins
-    links:
-     - hub:hub
-    ports:
-     - "8080:8080"
-     - "5000:5000"
