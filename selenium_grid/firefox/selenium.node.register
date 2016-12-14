@@ -5,7 +5,7 @@
 HUB_1_TCP_ADDR=hub:4433
 SeleniumVersion=2.53.1
 #SeleniumVersion=3.0.0-beta3
-FirefoxVersion=45.5.0esr
+FirefoxVersion=45.4.0esr
 seleniumPath="/var"
 logDir="/var/log"
 

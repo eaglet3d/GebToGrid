@@ -1,6 +1,10 @@
 version: '2'
 
 services:
+#  base:
+#    build: base/.
+#    image: selenium_grid/base:2.53.1
+
   hub:
     build: hub/.
     ports:
@@ -15,9 +19,9 @@ services:
 
   firefox:
     build: firefox/.
-    image: selenium_grid/firefox:45.5.0esr
+    image: selenium_grid/firefox:45.4.0esr
     links:
-     - hub:hub
+     - hub
     expose:
      - "5555"
     logging:
@@ -32,7 +36,7 @@ services:
     image: jenkins
     container_name: ncjenkins
     links:
-     - hub:hub
+     - hub
     ports:
      - "8080:8080"
      - "5000:5000"
