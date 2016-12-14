@@ -26,6 +26,8 @@ RUN apt-get update -qqy \
     iproute \
     net-tools \
     iputils-ping \
+    curl \
+    dos2unix \
     && rm -rf /var/lib/apt/lists/*
 
 RUN cd /var && wget http://selenium-release.storage.googleapis.com/${VER_FOLDER}/selenium-server-standalone-${VERSION}.jar

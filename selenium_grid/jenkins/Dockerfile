@@ -22,6 +22,8 @@ RUN apt-get update -qqy \
     tree \
     unzip \
     vim \
+    curl \
+    dos2unix \
     && rm -rf /var/lib/apt/lists/*
 
 #========================================
