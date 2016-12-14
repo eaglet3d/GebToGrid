@@ -31,7 +31,7 @@ environments {
         //driver = { new FirefoxDriver() }
         driver = {
             DesiredCapabilities capabilities = DesiredCapabilities.firefox()
-            capabilities.setVersion("45.5.0esr")
+            capabilities.setVersion("45.4.0esr")
             capabilities.setPlatform(Platform.LINUX)
             new RemoteWebDriver( new URL("http://hub:4433/wd/hub"), capabilities )
 
