@@ -1,11 +1,15 @@
 package Pages
 
-import geb.Page
 import Common.MenuModule
+import geb.Page
 
-class GebishOrgHomePage extends Page {
+class CrossBrowserAutomationPage extends Page {
+    static url = "/crossbrowser"
 
-    static at = { title == "Geb - Very Groovy Browser Automation" }
+    static at = {
+        title == "Geb - Very Groovy Browser Automation" &
+        $("#main h1", 0).text() == "Cross Browser Automation"
+    }
 
     static content = {
         manualsMenu { module MenuModule, $("#header-content ul li", 0) }
