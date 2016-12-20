@@ -1,4 +1,6 @@
 import org.apache.tools.ant.taskdefs.condition.Os
+import groovy.xml.MarkupBuilder
+import groovy.io.FileType
 
 ext {
     // The drivers we want to use
@@ -9,6 +11,7 @@ ext {
         //groovyVersion = '2.4.5'
         groovyVersion = '2.4.7'
         gebVersion = '0.13.1'
+        //gebVersion = '1.0'
         seleniumVersion = '2.53.1'
         chromeDriverVersion = '2.19'
         phantomJsVersion = '1.9.7'
@@ -80,6 +83,76 @@ phantomJsTest {
 test {
     dependsOn drivers.collect { tasks["${it}Test"] }
     enabled = false
+}
+
+task reportSnaps << {
+    def list = []
+
+    def dir = new File("build/reports")
+    dir.eachFileRecurse (FileType.FILES) { file ->
+        if (file.path.contains("/geb/")) {
+            list << file
+        }
+    }
+
+    list.each {
+        println it.path
+    }
+
+    generateScreenshotsReportsPage(list)
+}
+
+reportSnaps.mustRunAfter firefoxTest
+//reportSnaps.mustRunAfter chromeTest
+
+/**
+ * Generate an html page that contains links to the Report Screnshots
+ * and other report artifact files.
+ *
+ * @param list - A list of report artifact File objects.
+ */
+void generateScreenshotsReportsPage(list) {
+
+    def reportArtifactsHtmlFile = new File('build/reports/reportArtifacts.html')
+    def writer = new StringWriter()
+    def html = new MarkupBuilder(writer)
+    def now = new Date()
+    html.html {
+        head {
+            title "Report Screen Shots"
+        }
+        body(id: "main") {
+            h2 id: "report-files",  "Report Artifact Files"
+            ul {
+                list.each { reportArtifactFile ->
+                    li {
+                        // Build link and extract the filename from the path
+                        a( href: removeFirstTwoDirectoriesFromPath(reportArtifactFile.path),
+                                removeFirstTwoDirectoriesFromPath(reportArtifactFile.path) )    // display relative path
+                        //reportArtifactFile.path.split(File.separator)[-1] )           // display just filename
+                    }
+                }
+            }
+            h3 "Report Generated Time"
+            p now
+        }
+    }
+    reportArtifactsHtmlFile.write writer.toString()
+}
+
+/**
+ * Removes the first two directories from the path
+ *
+ * @parm reportFile -The reportFile
+ */
+String removeFirstTwoDirectoriesFromPath(String reportArtifactFilePath) {
+    String reportFileNewPath = ""
+    reportArtifactFilePath.split(File.separator)[2..-1].each {
+        // Rebuild the path
+        reportFileNewPath += ( it + File.separator )
+    }
+    // Return path with last character from path removed
+    reportFileNewPath[0..-2]
 }
 
 apply from: "gradle/ci.gradle"
