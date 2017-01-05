@@ -46,6 +46,7 @@ class GebishOrgHighlightsSpec extends GebReportingSpec {
             sideMenuCrossBrowser.click()
 
         then: "User is shown Cross Browser Automation information"
+            sleep 2000
             at CrossBrowserAutomationPage
     }
 }

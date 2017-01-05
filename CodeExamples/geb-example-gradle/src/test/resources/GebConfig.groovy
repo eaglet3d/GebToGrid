@@ -14,7 +14,8 @@ import org.openqa.selenium.remote.RemoteWebDriver
 //import org.openqa.selenium.phantomjs.PhantomJSDriver
 
 waiting {
-	timeout = 2
+    timeout = 5
+    retryInterval = 0.5
 }
 
 environments {
