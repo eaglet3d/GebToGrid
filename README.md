@@ -11,9 +11,9 @@ The tssg branch contains tests for TSSG Projects.
 3. Confirm that you have the correct branch
    * `git status`
 4. Create test source code TSSGMMLoginSpec
-5. Confirm that the test runs locally with no errors
+5. Confirm that the test runs locally against Selenium Grid with no errors
    * `cd <project home>`
-   * `./gradlew firefoxTest --tests Tests.TSSGMMLoginSpec reportSnaps`
+   * `./gradlew firefoxLinuxTest --tests Tests.TSSGMMLoginSpec reportSnaps`
 6. In GitHub, create pull request for [GebToGrid branch tssg](https://github.com/eaglet3d/GebToGrid/tree/tssg)
 7. In [Jenkins Home Page](http://technologynursery.org:8022/), add job item to run [TSSGMMLoginSpec](http://technologynursery.org:8022/job/TSSGMMLoginSpec/)
    * Select `New Item`
