@@ -5,7 +5,7 @@ The tssg branch contains tests for TSSG Projects.
 
 ### Adding a Geb Test Spec to Jenkins
 1. Pull [GebToGrid](https://github.com/eaglet3d/GebToGrid/tree/tssg) project from github
-   * `git clone git@github.com:eaglet3d/GebToGrid.git`
+   * `git clone https://github.com/eaglet3d/GebToGrid.git`
 2. Checkout the tssg branch
    * `git checkout tssg`
 3. Confirm that you have the correct branch
