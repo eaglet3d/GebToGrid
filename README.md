@@ -3,6 +3,9 @@
 ## tssg branch
 The tssg branch contains tests for TSSG Projects.
 
+### Prerequisites
+1. Install [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+
 ### Adding a Geb Test Spec to Jenkins
 1. Pull [GebToGrid](https://github.com/eaglet3d/GebToGrid/tree/tssg) project from github
    * `git clone https://github.com/eaglet3d/GebToGrid.git`
@@ -10,7 +13,7 @@ The tssg branch contains tests for TSSG Projects.
    * `git checkout tssg`
 3. Confirm that you have the correct branch
    * `git status`
-4. Create test source code TSSGMMLoginSpec
+4. Create test source code (e.g. TSSGMMLoginSpec)
 5. Confirm that the test runs locally against Selenium Grid with no errors
    * `cd <project home>`
    * `./gradlew firefoxLinuxTest --tests Tests.TSSGMMLoginSpec reportSnaps`
@@ -20,7 +23,7 @@ The tssg branch contains tests for TSSG Projects.
    * Give project a name
    * At botton `Copy From` field, enter `TSSGMMLoginSpec`
    * Reference Configuration for [Project TSSGMMLoginSpec](http://technologynursery.org:8022/job/TSSGMMLoginSpec/).
-   ** Go through each field and update as necessary for your test.
+   * Go through each field and update as necessary for your test.
 8. In [Jenkins Home Page](http://technologynursery.org:8022/), execute build for your project
    * Select `<your new build project name>`
    * Select `Build Now`
