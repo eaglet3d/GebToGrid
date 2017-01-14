@@ -15,7 +15,31 @@ Presentation of my talk on using Geb to test against a Selenium Grid
   * `docker build -t selenium_grid/base:2.53.1 base/.`
 4. Build and start the hub and one firefox node
   * `docker-compose up -d hub firefox`
-5. Scale to six firefox nodes
+5. Scale to specified number of firefox nodes
   * `docker-compose scale firefox=6`
 6. View your running containers
   * `docker ps`
+
+## Access to Selenium Grid Hub Console
+1. Determine the IP address of your docker
+  * If using Docker Toolbox
+    * `docker-machine ip`
+  * If using Linux
+    * `ifconfig`
+    * or `ip address show`
+2. Using a browser
+  * navigate to `http://<ipAddress>:4433/grid/console`
+
+## Selenium Grid Shutdown
+1. Stop and remove the selenium grid containers.
+  * `cd selenium_grid`
+  * `docker-compose down`
+2. Verify your containers are removed
+  * `docker ps -a`
+  
+## Debug a container
+* Start a bash shell in a running container
+  * `docker -it <container_id> bash`
+* You can run any command that is installed in this container.
+* To exit the container's bash shell
+  * `exit`
