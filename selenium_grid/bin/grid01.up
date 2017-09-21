@@ -1,0 +1,31 @@
+#!/usr/bin/bash
+#help grid01.up                                  # Start the Selenium Grid 01
+
+#imageTag="2.53.1"                                # Oldest version of Selenium Grid that works.
+#imageTag="3.4.0"
+#imageTag="3.1.0"
+#imageTag="3.4.0-chromium"
+imageTag="3.5.3"
+#imageTag="latest"
+
+echo Start the hub container ...
+docker run -d -p 4444:4444 -e JAVA_OPTS=-Xmx512m --name selenium-hub selenium/hub:${imageTag}
+
+numFirefoxNodes=4
+echo Start ${numFirefoxNodes} firefox nodes ...
+for n in $(seq -f '%02g' 1 $numFirefoxNodes)
+do
+  echo -n "$n "
+  docker run -d --link selenium-hub:hub -e JAVA_OPTS=-Xmx512m --name selenium-node-firefox.${n} selenium/node-firefox:${imageTag}
+done
+echo
+
+numChromeNodes=4
+echo Start ${numChromeNodes} Chrome nodes ...
+for n in $(seq -f '%02g' 1 $numChromeNodes)
+do
+  echo -n "$n "
+  docker run -d --link selenium-hub:hub -e JAVA_OPTS=-Xmx512m --name selenium-node-chrome.${n} selenium/node-chrome:${imageTag}
+done
+
+grid01.status

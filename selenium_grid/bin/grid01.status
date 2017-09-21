@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+#help grid01.status                              # Display the status of running container processes and memory utilization
+
+echo ""
+echo "Showing status of all containers"
+docker ps -a
+
+echo ""
+echo "Showing memory utilization in Mega-Bytes"
+free -m

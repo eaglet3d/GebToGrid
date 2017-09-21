@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+#help grid01.update                              # Update the grid01 images
+
+echo "Updating the grid01 images ..."
+
+docker images | awk '{print $1}' | grep -v 'none' | grep -iv 'repo' | xargs -n1 docker pull
+
+

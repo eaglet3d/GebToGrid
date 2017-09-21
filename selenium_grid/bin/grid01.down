@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+#help grid01.down                                # Stops and removes all containers 
+#Author Ralph A. Navarro Jr.
+#AuthorPhone 508-287-0190
+#AuthorEmail ralph@navarrocomputing.com
+#Copyright 2017
+#License Transitional Data Services
+
+runningContainers="$(docker ps --quiet)"
+allContainers="$(docker ps -aq)"
+
+echo "Stopping all running containers ..."
+docker stop ${runningContainers}
+
+echo "Remove all containers that were running ..."
+docker rm ${allContainers}
+
+grid01.status
