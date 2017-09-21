@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/geb-spin.iml" filepath="$PROJECT_DIR$/geb-spin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/geb-spin_main.iml" filepath="$PROJECT_DIR$/.idea/modules/geb-spin_main.iml" group="geb-spin" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/geb-spin_test.iml" filepath="$PROJECT_DIR$/.idea/modules/geb-spin_test.iml" group="geb-spin" />
+    </modules>
+  </component>
+</project>
