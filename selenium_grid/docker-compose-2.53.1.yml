@@ -1,0 +1,38 @@
+version: '2'
+
+services:
+  hub:
+    build: hub/.
+    ports:
+     - "4433:4433"
+    image: selenium_grid/hub:2.53.1
+    logging:
+      driver: "json-file"
+    volumes:
+      - ./logs:/var/log
+    environment:
+      JAVA_OPTS: "-Djava.security.egd=file:/dev/./urandom"
+
+  firefox:
+    build: firefox/.
+    image: selenium_grid/firefox:45.4.0esr
+    links:
+     - hub
+    expose:
+     - "5555"
+    logging:
+      driver: "json-file"
+    volumes:
+      - ./logs:/var/log
+    environment:
+      JAVA_OPTS: "-Djava.security.egd=file:/dev/./urandom"
+
+  jenkins:
+    build: jenkins/.
+    image: jenkins
+    container_name: ncjenkins
+    links:
+     - hub
+    ports:
+     - "8080:8080"
+     - "5000:5000"
