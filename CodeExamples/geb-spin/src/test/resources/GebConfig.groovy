@@ -18,7 +18,7 @@ waiting {
 environments {
 
 	// Grid default URL
-	System.properties['browser.location.default'] = "http://192.168.99.100:4444/wd/hub"
+	System.properties['browser.location.default'] = "http://192.168.99.100:4433/wd/hub"
 
 	// Use Grid default URL if browser.location is not set
 	def browserLocation = System.properties['browser.location'] ?: System.properties['browser.location.default']

@@ -9,7 +9,7 @@ imageTag="3.5.3"
 #imageTag="latest"
 
 echo Start the hub container ...
-docker run -d -p 4444:4444 -e JAVA_OPTS=-Xmx512m --name selenium-hub selenium/hub:${imageTag}
+docker run -d -p 4433:4444 -e JAVA_OPTS=-Xmx512m --name selenium-hub selenium/hub:${imageTag}
 
 numFirefoxNodes=4
 echo Start ${numFirefoxNodes} firefox nodes ...
