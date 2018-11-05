@@ -11,7 +11,7 @@ plugins {
 
 ext {
     // The drivers we want to use
-    //drivers = ["firefox", "chrome", "phantomJs"]
+    //drivers = ["firefox", "chrome"]
     //drivers = ["firefox","firefoxLinux"]
     drivers = ["chrome"]
 
