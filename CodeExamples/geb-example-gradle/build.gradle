@@ -2,25 +2,31 @@ import org.apache.tools.ant.taskdefs.condition.Os
 import groovy.xml.MarkupBuilder
 import groovy.io.FileType
 
+plugins {
+    id "idea"
+    id "groovy"
+    id "com.energizedwork.webdriver-binaries" version "1.4"
+    id "com.energizedwork.idea-base" version "1.4"
+}
+
 ext {
     // The drivers we want to use
     //drivers = ["firefox", "chrome", "phantomJs"]
-    drivers = ["firefox","firefoxLinux"]
+    //drivers = ["firefox","firefoxLinux"]
+    drivers = ["chrome"]
 
     ext {
-        //groovyVersion = '2.4.5'
-        groovyVersion = '2.4.7'
-        gebVersion = '0.13.1'
-        //gebVersion = '1.0'
-        seleniumVersion = '2.53.1'
-        chromeDriverVersion = '2.19'
-        phantomJsVersion = '1.9.7'
+        groovyVersion = '2.4.12'
+        gebVersion = '2.2'
+        seleniumVersion = '3.6.0'
+        chromeDriverVersion = '2.32'
+        geckoDriverVersion = '0.18.0'
     }
 }
 
-apply plugin: "groovy"
-apply from: "gradle/idea.gradle"
-apply from: "gradle/osSpecificDownloads.gradle"
+//apply plugin: "groovy"
+//apply from: "gradle/idea.gradle"
+//apply from: "gradle/osSpecificDownloads.gradle"
 
 repositories {
     mavenCentral()
@@ -29,7 +35,8 @@ repositories {
 dependencies {
     // If using Spock, need to depend on geb-spock
     testCompile "org.gebish:geb-spock:$gebVersion"
-    testCompile("org.spockframework:spock-core:1.0-groovy-2.4") {
+    //testCompile("org.spockframework:spock-core:1.0-groovy-2.4") {
+    testCompile("org.spockframework:spock-core:1.1-groovy-2.4") {
         exclude group: "org.codehaus.groovy"
     }
     testCompile "org.codehaus.groovy:groovy-all:$groovyVersion"
@@ -40,11 +47,12 @@ dependencies {
     // Drivers
     testCompile "org.seleniumhq.selenium:selenium-chrome-driver:$seleniumVersion"
     testCompile "org.seleniumhq.selenium:selenium-firefox-driver:$seleniumVersion"
-    // using a custom version of phantomjs driver for now as the original one does not support WebDriver > 2.43.1
-    testCompile("com.codeborne:phantomjsdriver:1.2.1") {
-        // phantomjs driver pulls in a different selenium version
-        transitive = false
-    }
+
+}
+
+webdriverBinaries {
+    chromedriver chromeDriverVersion
+    geckodriver geckoDriverVersion
 }
 
 drivers.each { driver ->
@@ -64,25 +72,21 @@ drivers.each { driver ->
     }
 }
 
-/*
-chromeTest {
-    dependsOn unzipChromeDriver
-
-    def chromedriverFilename = Os.isFamily(Os.FAMILY_WINDOWS) ? "chromedriver.exe" : "chromedriver"
-    systemProperty "webdriver.chrome.driver", new File(unzipChromeDriver.outputs.files.singleFile, chromedriverFilename).absolutePath
-}
-
-phantomJsTest {
-    dependsOn unzipPhantomJs
-
-    def phantomJsFilename = Os.isFamily(Os.FAMILY_WINDOWS) ? "phantomjs.exe" : "bin/phantomjs"
-    systemProperty "phantomjs.binary.path", new File(unzipPhantomJs.outputs.files.singleFile, phantomJsFilename).absolutePath
-}
-*/
-
 test {
     dependsOn drivers.collect { tasks["${it}Test"] }
     enabled = false
+}
+
+tasks.withType(Test) {
+    maxHeapSize = "1g"
+    jvmArgs '-XX:MaxMetaspaceSize=128m'
+    testLogging {
+        exceptionFormat = 'full'
+    }
+}
+
+tasks.withType(GroovyCompile) {
+    groovyOptions.forkOptions.memoryMaximumSize = '256m'
 }
 
 task reportSnaps << {
@@ -102,8 +106,8 @@ task reportSnaps << {
     generateScreenshotsReportsPage(list)
 }
 
-reportSnaps.mustRunAfter firefoxTest
-//reportSnaps.mustRunAfter chromeTest
+//reportSnaps.mustRunAfter firefoxTest
+reportSnaps.mustRunAfter chromeTest
 
 /**
  * Generate an html page that contains links to the Report Screnshots

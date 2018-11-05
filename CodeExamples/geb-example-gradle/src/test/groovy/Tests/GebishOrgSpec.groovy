@@ -11,12 +11,10 @@ class GebishOrgSpec extends GebReportingSpec {
             to GebishOrgHomePage
 
         and: //hover over to expand the menu
-            interact {
-                moveToElement(manualsMenu.toggle)
-            }
+            manualsMenu.open()
 
         then: //first link is for the current manual
-            manualsMenu.links[0].text().endsWith("- CURRENT")
+            manualsMenu.links[0].text().startsWith("current")
 
         when:
             manualsMenu.links[0].click()
