@@ -1,6 +1,5 @@
-import org.apache.tools.ant.taskdefs.condition.Os
-import groovy.xml.MarkupBuilder
 import groovy.io.FileType
+import groovy.xml.MarkupBuilder
 
 plugins {
     id "idea"
