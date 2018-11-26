@@ -1,32 +1,13 @@
 package Pages
 
-import geb.Page
+import Common.TSSGTechBasePage
 
-class TSSGTechHomePage extends Page {
+class TSSGTechHomePage extends TSSGTechBasePage {
 
-    static at = {
-        title == "TSSG"
-    }
+    static url = "http://technologynursery.org/tssgTech/index.html#top"
 
     static content = {
         myCarousel { $("#myCarousel") }
-
-        // Menu
-        generalMenu { $("a", text: "General Meeting") }
-        scheduleMenu { $("a", text: "Schedule") }
-        webMenu { $("a", text: "WEB") }
-        mobileMenu { $("a", text: "MOBILE") }
-        qaMenu { $("a", text: "QA") }
-        dataMenu { $("a", text: "DATA") }
-        devOpsMenu { $("a", text: "DEVOPS") }
-
-        // Sections
-        generalSection { $("#meetingId") }
-        scheduleSection { $("#scheduleId") }
-        webSection { $("#webId") }
-        mobileSection { $("#mobileId") }
-        qaSection { $("#qaId") }
-        dataSection { $("#dataId") }
-        devOpsSection { $("#devopsId") }
+        scheduleIcon { $("a img", src: "Images/icon-calendar5.png") }
     }
 }
