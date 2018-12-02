@@ -31,7 +31,12 @@ class TSSGTechBasePage extends Page {
         dataPage { $("dataGroup.html#top") }
         devopsPage { $("devopsGroup.html#top") }
 
-        //@ToDo Footer Pages
+        // Footer icon links
+        webFooter { $("#webGroup").parent() }
+        mobileFooter { $("#mobileGroup").parent() }
+        qaFooter { $("qaGroup").parent() }
+        dataFooter { $("dataGroup").parent() }
+        devopsFooter { $("devopsGroup").parent() }
 
     }
 }

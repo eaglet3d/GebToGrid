@@ -32,7 +32,7 @@ class TSSGTechSpec extends GebReportingSpec {
 
     }
 
-    @Ignore
+    @IgnoreRest
     @Unroll
     def "selecting #menuItem goes to #page"() {
         when:
@@ -40,17 +40,19 @@ class TSSGTechSpec extends GebReportingSpec {
             "${menuItem}"().click()
 
         then:
-            waitFor { "${page}"().focused }
+            //waitFor { "${page}"().focused }
+            //at Class.forName("Pages.${page}",  false, Thread.currentThread().contextClassLoader)
+            at ("Pages.${page}" as Class)
 
         where:
             menuItem       | page
-            "generalMenu"  | "generalPage"
-            "scheduleMenu" | "schedulePage"
-            "webMenu"      | "webPage"
-            "mobileMenu"   | "mobilePage"
-            "qaMenu"       | "qaPage"
-            "dataMenu"     | "dataPage"
-            "devopsMenu"   | "devopsPage"
+            "generalMenu"  | "TSSGTechHomePage"
+//            "scheduleMenu" | "schedulePage"
+//            "webMenu"      | "webPage"
+            "mobileMenu"   | "TSSGTechMobilePage"
+//            "qaMenu"       | "qaPage"
+//            "dataMenu"     | "dataPage"
+//            "devopsMenu"   | "devopsPage"
 
     }
 }
