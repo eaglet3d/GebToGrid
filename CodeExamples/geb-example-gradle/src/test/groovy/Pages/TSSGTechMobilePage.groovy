@@ -4,7 +4,7 @@ import Common.TSSGTechBasePage
 
 class TSSGTechMobilePage extends TSSGTechBasePage {
 
-    static url = "http://technologynursery.org/tssgTech/mobileGroup.html#top"
+    static url = "mobileGroup.html#top"
 
     static at = {
         titleText

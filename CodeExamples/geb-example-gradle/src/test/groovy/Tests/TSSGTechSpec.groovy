@@ -4,20 +4,24 @@ import Common.TSSGTechBasePage
 import Pages.TSSGTechHomePage
 import Pages.TSSGTechMobilePage
 import geb.spock.GebReportingSpec
+import spock.lang.Ignore
 import spock.lang.Unroll
 import spock.lang.IgnoreRest
 
 class TSSGTechSpec extends GebReportingSpec {
 
-    def "can get to the tssg.tech home page"() {
-        when:
-            to TSSGTechBasePage
-
-        then:
-            at TSSGTechBasePage
+    def setupSpec() {
+        println "baseUrl = ${baseUrl}"
     }
 
-    @IgnoreRest
+    def "can get to the home page"() {
+        when:
+            to TSSGTechHomePage
+
+        then:
+            at TSSGTechHomePage
+    }
+
     def "can get to the mobile section"() {
         when:
             to TSSGTechHomePage
@@ -28,6 +32,7 @@ class TSSGTechSpec extends GebReportingSpec {
 
     }
 
+    @Ignore
     @Unroll
     def "selecting #menuItem goes to #page"() {
         when:

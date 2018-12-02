@@ -54,4 +54,6 @@ environments {
 
 // To run the tests with all browsers just run “./gradlew test”
 
-baseUrl = "http://tssg.tech"
+//baseUrl = "https://technologynursery.org/tssgTech/"
+//baseUrl = "https://technologynursery.org/tssgTechStagedMaster/"
+baseUrl = "https://technologynursery.org/tssgTechMultipage/"

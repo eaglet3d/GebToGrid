@@ -4,7 +4,7 @@ import Common.TSSGTechBasePage
 
 class TSSGTechHomePage extends TSSGTechBasePage {
 
-    static url = "http://technologynursery.org/tssgTech/index.html#top"
+    static url = "index.html#top"
 
     static content = {
         myCarousel { $("#myCarousel") }
