@@ -1,8 +1,9 @@
 package Tests
 
-import Common.TSSGTechBasePage
 import Pages.TSSGTechHomePage
 import Pages.TSSGTechMobilePage
+import Pages.TSSGTechSchedulePage
+import Pages.TSSGTechWebPage
 import geb.spock.GebReportingSpec
 import spock.lang.Ignore
 import spock.lang.Unroll
@@ -17,7 +18,6 @@ class TSSGTechSpec extends GebReportingSpec {
     def "can get to the home page"() {
         when:
             to TSSGTechHomePage
-
         then:
             at TSSGTechHomePage
     }
@@ -26,7 +26,6 @@ class TSSGTechSpec extends GebReportingSpec {
         when:
             to TSSGTechHomePage
             mobileMenu.click()
-
         then:
             at TSSGTechMobilePage
 
@@ -38,18 +37,18 @@ class TSSGTechSpec extends GebReportingSpec {
         when:
             to TSSGTechHomePage
             "${menuItem}"().click()
-
         then:
             //waitFor { "${page}"().focused }
-            //at Class.forName("Pages.${page}",  false, Thread.currentThread().contextClassLoader)
-            at ("Pages.${page}" as Class)
+            //at Class.forName("Pages.${page}",  false, Thread.currentThread().contextClassLoader) // page must be a string
+            //at ("Pages.${page}" as Class)  // page must be a string
+            at page
 
         where:
             menuItem       | page
-            "generalMenu"  | "TSSGTechHomePage"
-//            "scheduleMenu" | "schedulePage"
-//            "webMenu"      | "webPage"
-            "mobileMenu"   | "TSSGTechMobilePage"
+            "generalMenu"  | TSSGTechHomePage
+            "scheduleMenu" | TSSGTechSchedulePage
+            "webMenu"      | TSSGTechWebPage
+            "mobileMenu"   | TSSGTechMobilePage
 //            "qaMenu"       | "qaPage"
 //            "dataMenu"     | "dataPage"
 //            "devopsMenu"   | "devopsPage"
