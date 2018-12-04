@@ -22,15 +22,6 @@ class TSSGTechBasePage extends Page {
         dataMenu { $("a", text: "DATA") }
         devOpsMenu { $("a", text: "DEVOPS") }
 
-        // Header Pages
-        generalPage { $("index.html#top") }
-        schedulePage { $("schedule.html#top") }
-        webPage { $("webGroup.html#top") }
-        //mobilePage { $("mobileGroup.html#top") }
-        qaPage { $("qaGroup.html#top") }
-        dataPage { $("dataGroup.html#top") }
-        devopsPage { $("devopsGroup.html#top") }
-
         // Footer icon links
         webFooter { $("#webGroup").parent() }
         mobileFooter { $("#mobileGroup").parent() }
