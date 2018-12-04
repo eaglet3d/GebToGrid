@@ -25,9 +25,9 @@ class TSSGTechBasePage extends Page {
         // Footer icon links
         webFooter { $("#webGroup").parent() }
         mobileFooter { $("#mobileGroup").parent() }
-        qaFooter { $("qaGroup").parent() }
-        dataFooter { $("dataGroup").parent() }
-        devopsFooter { $("devopsGroup").parent() }
+        qaFooter { $("#qaGroup").parent() }
+        dataFooter { $("#dataGroup").parent() }
+        devopsFooter { $("#devopsGroup").parent() }
 
     }
 }

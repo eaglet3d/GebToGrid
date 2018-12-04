@@ -1,5 +1,6 @@
 package Tests
 
+import Pages.TSSGTechDataAnalyticsPage
 import Pages.TSSGTechHomePage
 import Pages.TSSGTechMobilePage
 import Pages.TSSGTechSchedulePage
@@ -51,7 +52,7 @@ class TSSGTechSpec extends GebReportingSpec {
             "webMenu"      | TSSGTechWebPage
             "mobileMenu"   | TSSGTechMobilePage
             "qaMenu"       | TSSGTechQAPage
-//            "dataMenu"     | "dataPage"
+            "dataMenu"     | TSSGTechDataAnalyticsPage
 //            "devopsMenu"   | "devopsPage"
 
     }
