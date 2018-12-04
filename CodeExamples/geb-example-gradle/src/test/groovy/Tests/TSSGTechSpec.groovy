@@ -24,7 +24,7 @@ class TSSGTechSpec extends GebReportingSpec {
         then:
             at TSSGTechHomePage
     }
-
+/*
     def "can get to the mobile section"() {
         when:
             to TSSGTechHomePage
@@ -33,10 +33,10 @@ class TSSGTechSpec extends GebReportingSpec {
             at TSSGTechMobilePage
 
     }
-
-    @IgnoreRest
+*/
+    //@IgnoreRest
     @Unroll
-    def "selecting #menuItem goes to #page"() {
+    def "selecting menu #menuItem goes to #page.name"() {
         when:
             to TSSGTechHomePage
             "${menuItem}"().click()
@@ -48,6 +48,7 @@ class TSSGTechSpec extends GebReportingSpec {
 
         where:
             menuItem       | page
+            "homeLinkIcon" | TSSGTechHomePage
             "generalMenu"  | TSSGTechHomePage
             "scheduleMenu" | TSSGTechSchedulePage
             "webMenu"      | TSSGTechWebPage
@@ -55,6 +56,24 @@ class TSSGTechSpec extends GebReportingSpec {
             "qaMenu"       | TSSGTechQAPage
             "dataMenu"     | TSSGTechDataAnalyticsPage
             "devopsMenu"   | TSSGTechDevOpsPage
+
+    }
+
+    @Unroll
+    def "selecting footer icon #footerIcon goes to #page.name"() {
+        when:
+            to TSSGTechHomePage
+            "${footerIcon}"().click()
+        then:
+            at page
+
+        where:
+            footerIcon           | page
+            "webFooterIcon"      | TSSGTechWebPage
+            "mobileFooterIcon"   | TSSGTechMobilePage
+            "qaFooterIcon"       | TSSGTechQAPage
+            "dataFooterIcon"     | TSSGTechDataAnalyticsPage
+            "devopsFooterIcon"   | TSSGTechDevOpsPage
 
     }
 }

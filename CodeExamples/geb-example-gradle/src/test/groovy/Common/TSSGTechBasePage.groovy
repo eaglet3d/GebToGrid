@@ -11,7 +11,7 @@ class TSSGTechBasePage extends Page {
 
     static content = {
         // Header
-        homeLinkImage { $("a img", src: "Images/Logo_TSSG.png") }
+        homeLinkIcon { $("a img", src: "Images/Logo_TSSG.png").parent() }
 
         // Header Menu
         generalMenu { $("a", text: "Home") }
@@ -23,11 +23,11 @@ class TSSGTechBasePage extends Page {
         devopsMenu { $("a", text: "DEVOPS") }
 
         // Footer icon links
-        webFooter { $("#webGroup").parent() }
-        mobileFooter { $("#mobileGroup").parent() }
-        qaFooter { $("#qaGroup").parent() }
-        dataFooter { $("#dataGroup").parent() }
-        devopsFooter { $("#devopsGroup").parent() }
+        webFooterIcon { $("#webGroup").parent() }
+        mobileFooterIcon { $("#mobileGroup").parent() }
+        qaFooterIcon { $("#qaGroup").parent() }
+        dataFooterIcon { $("#dataGroup").parent() }
+        devopsFooterIcon { $("#devopsGroup").parent() }
 
     }
 }
