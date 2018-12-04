@@ -49,6 +49,9 @@ environments {
 
 // To run the tests with all browsers just run “./gradlew test”
 
+// Set the actual baseUrl from alias values.
+// For example: in gradle configuration set this VM Option to use the qa environment
+// -Dgeb.build.baseUrl=qa
 baseUrl = System.properties['geb.build.baseUrl']
 switch (baseUrl) {
     case ["dev", "multipage"]:
