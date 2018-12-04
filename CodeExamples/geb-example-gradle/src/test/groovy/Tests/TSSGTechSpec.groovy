@@ -49,7 +49,7 @@ class TSSGTechSpec extends GebReportingSpec {
             "scheduleMenu" | TSSGTechSchedulePage
             "webMenu"      | TSSGTechWebPage
             "mobileMenu"   | TSSGTechMobilePage
-//            "qaMenu"       | "qaPage"
+            "qaMenu"       | TSSGTechQAPage
 //            "dataMenu"     | "dataPage"
 //            "devopsMenu"   | "devopsPage"
 
