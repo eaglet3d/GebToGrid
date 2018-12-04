@@ -4,6 +4,7 @@ import Pages.TSSGTechHomePage
 import Pages.TSSGTechMobilePage
 import Pages.TSSGTechSchedulePage
 import Pages.TSSGTechWebPage
+import Pages.TSSGTechQAPage
 import geb.spock.GebReportingSpec
 import spock.lang.Ignore
 import spock.lang.Unroll
