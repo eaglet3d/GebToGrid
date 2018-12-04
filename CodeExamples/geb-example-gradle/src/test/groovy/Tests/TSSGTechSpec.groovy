@@ -36,7 +36,7 @@ class TSSGTechSpec extends GebReportingSpec {
 */
     //@IgnoreRest
     @Unroll
-    def "selecting menu #menuItem goes to #page.name"() {
+    def "selecting header menu #menuItem goes to #page.name"() {
         when:
             to TSSGTechHomePage
             "${menuItem}"().click()
