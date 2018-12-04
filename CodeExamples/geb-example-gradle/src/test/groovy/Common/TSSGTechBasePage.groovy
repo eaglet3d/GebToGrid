@@ -20,7 +20,7 @@ class TSSGTechBasePage extends Page {
         mobileMenu { $("a", text: "MOBILE") }
         qaMenu { $("a", text: "QA") }
         dataMenu { $("a", text: "DATA") }
-        devOpsMenu { $("a", text: "DEVOPS") }
+        devopsMenu { $("a", text: "DEVOPS") }
 
         // Footer icon links
         webFooter { $("#webGroup").parent() }
