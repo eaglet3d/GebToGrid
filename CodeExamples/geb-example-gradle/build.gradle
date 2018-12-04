@@ -63,12 +63,16 @@ drivers.each { driver ->
 
         // If you wanted to set the baseUrl in your build…
         // systemProperty "geb.build.baseUrl", "http://myapp.com"
+        systemProperties System.properties
+
     }
 }
 
 test {
     dependsOn drivers.collect { tasks["${it}Test"] }
     enabled = false
+    systemProperties System.properties
+
 }
 
 tasks.withType(Test) {

@@ -11,7 +11,6 @@ import org.openqa.selenium.firefox.FirefoxProfile
 import org.openqa.selenium.Platform
 import org.openqa.selenium.remote.DesiredCapabilities
 import org.openqa.selenium.remote.RemoteWebDriver
-//import org.openqa.selenium.phantomjs.PhantomJSDriver
 
 waiting {
 	timeout = 2
@@ -46,14 +45,23 @@ environments {
         driver = { new FirefoxDriver() }
     }
 
-    //phantomJs {
-    //    driver = { new PhantomJSDriver() }
-    //}
-
 }
 
 // To run the tests with all browsers just run “./gradlew test”
 
-//baseUrl = "https://technologynursery.org/tssgTech/"
-//baseUrl = "https://technologynursery.org/tssgTechStagedMaster/"
-baseUrl = "https://technologynursery.org/tssgTechMultipage/"
+baseUrl = System.properties['geb.build.baseUrl']
+switch (baseUrl) {
+    case ["dev", "multipage"]:
+        baseUrl = "https://technologynursery.org/tssgTechMultipage/"
+        break
+    case ["qa", "stagedMaster"]:
+        baseUrl = "https://technologynursery.org/tssgTechStagedMaster/"
+        break
+    case ["prod", "tssgTech"]:
+        baseUrl = "https://technologynursery.org/tssgTech/"
+        break
+    default:
+        baseUrl = "https://technologynursery.org/tssgTechMultipage/"
+        break
+}
+
