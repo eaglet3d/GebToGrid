@@ -3,20 +3,25 @@ version: '2'
 services:
   hub:
     container_name: selenium-hub
-    image: selenium/hub:3.5.3
+    image: selenium/hub:3.12.0
+    expose:
+     - "4444"
     ports:
      - "4433:4444"
+    environment:
+     - VIRTUAL_HOST=grid.technologynursery.com
 
   chrome:
-    image: selenium/node-chrome:3.5.3
+    image: selenium/node-chrome:3.12.0
     environment:
      - HUB_PORT_4444_TCP_ADDR=hub
      - HUB_PORT_4444_TCP_PORT=4444
+     - webdriver.chrome.verboseLogging=true
     expose:
      - "5555"
 
   firefox:
-    image: selenium/node-firefox:3.5.3
+    image: selenium/node-firefox:3.12.0
     environment:
      - HUB_PORT_4444_TCP_ADDR=hub
      - HUB_PORT_4444_TCP_PORT=4444
@@ -25,15 +30,20 @@ services:
 
   jenkins:
     build: jenkins/.
-    image: jenkins
+    #image: jenkins/jenkins:lts
     container_name: ncjenkins
     volumes:
      - ncjenkins_home:/var/jenkins_home
     links:
      - "hub:selenium-hub"
+    expose:
+     - "8080"
+     - "5000"
     ports:
      - "8080:8080"
      - "5000:5000"
+    environment:
+     - VIRTUAL_HOST=jenkins.technologynursery.org
 
 volumes:
   ncjenkins_home:
