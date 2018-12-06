@@ -2,37 +2,49 @@ version: '2'
 
 services:
   hub:
-    build: hub/.
+    container_name: selenium-hub
+    image: selenium/hub:3.12.0
+    expose:
+     - "4444"
     ports:
-     - "4433:4433"
-    image: selenium_grid/hub:2.53.1
-    logging:
-      driver: "json-file"
-    volumes:
-      - ./logs:/var/log
+     - "4433:4444"
     environment:
-      JAVA_OPTS: "-Djava.security.egd=file:/dev/./urandom"
+     - VIRTUAL_HOST=grid.technologynursery.com
 
-  firefox:
-    build: firefox/.
-    image: selenium_grid/firefox:45.4.0esr
-    links:
-     - hub
+  chrome:
+    image: selenium/node-chrome:3.12.0
+    environment:
+     - HUB_PORT_4444_TCP_ADDR=hub
+     - HUB_PORT_4444_TCP_PORT=4444
+     - webdriver.chrome.verboseLogging=true
     expose:
      - "5555"
-    logging:
-      driver: "json-file"
-    volumes:
-      - ./logs:/var/log
+
+  firefox:
+    image: selenium/node-firefox:3.12.0
     environment:
-      JAVA_OPTS: "-Djava.security.egd=file:/dev/./urandom"
+     - HUB_PORT_4444_TCP_ADDR=hub
+     - HUB_PORT_4444_TCP_PORT=4444
+    expose:
+     - "5555"
 
   jenkins:
     build: jenkins/.
-    image: jenkins
+    #image: jenkins/jenkins:lts
     container_name: ncjenkins
+    volumes:
+     - ncjenkins_home:/var/jenkins_home
     links:
-     - hub
+     - "hub:selenium-hub"
+    expose:
+     - "8080"
+     - "5000"
     ports:
      - "8080:8080"
      - "5000:5000"
+    environment:
+     - VIRTUAL_HOST=jenkins.technologynursery.org
+
+volumes:
+  ncjenkins_home:
+    external: true
